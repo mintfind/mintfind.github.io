@@ -3,59 +3,77 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MintFind — mint-condition finds from Calgary</title>
-<meta name="description" content="MintFind: hand-picked, mint-condition finds from Calgary thrift shops. Tools, audio, watches, collectibles and more. Pay by card, PayPal, Interac or crypto.">
+<title>MintFind — hidden gems, mint condition</title>
+<meta name="description" content="MintFind: hand-picked vintage and quality pre-loved pieces from Alberta, Canada. Shipping worldwide. Pay by card, PayPal, Interac or crypto.">
 <style>
+:root{--paper:#f6ecda;--paper2:#efe0c4;--ink:#3a2618;--rust:#c45a28;--mustard:#dfa33a;--teal:#2f6f68;--muted:#7a5d48}
 *{box-sizing:border-box}
-body{margin:0;font-family:system-ui,"Segoe UI",Arial,sans-serif;background:#0b0f0d;color:#e8f5ee;line-height:1.5}
-a{color:#3dffa8}
-.wrap{max-width:1040px;margin:auto;padding:0 22px}
-header{padding:22px 0;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:800;font-size:24px;letter-spacing:.5px}
-.logo span{background:linear-gradient(90deg,#3dffa8,#2ec5ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.badge{font-size:12px;border:1px solid #2a3b33;border-radius:999px;padding:4px 10px;color:#9fd8bd}
-.hero{padding:70px 0 50px;text-align:center}
-.hero h1{font-size:clamp(34px,6vw,60px);margin:0 0 14px;line-height:1.08}
-.hero h1 em{font-style:normal;background:linear-gradient(90deg,#3dffa8,#2ec5ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{font-size:19px;color:#a9c9b9;max-width:640px;margin:0 auto 28px}
-.cta{display:inline-block;padding:14px 26px;border-radius:12px;background:linear-gradient(90deg,#3dffa8,#2ec5ff);color:#04110b;font-weight:800;text-decoration:none}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:30px 0}
-.card{background:#111a16;border:1px solid #1d2b24;border-radius:16px;padding:20px}
-.card h3{margin:6px 0 8px;font-size:18px}
-.card p{margin:0;color:#9db8ab;font-size:15px}
-.n{font-size:13px;color:#3dffa8;font-weight:700}
-h2{font-size:28px;margin:56px 0 6px}
-.sub{color:#9db8ab;margin:0}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}
-.tags span{background:#111a16;border:1px solid #1d2b24;border-radius:999px;padding:7px 14px;font-size:14px;color:#cfe9dc}
-.pay{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
-.pay span{border:1px solid #2a3b33;border-radius:10px;padding:10px 16px;font-weight:600}
-footer{margin:70px 0 30px;padding-top:20px;border-top:1px solid #1d2b24;color:#7f9a8c;font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:"Segoe UI",system-ui,Arial,sans-serif;line-height:1.6;
+  background:var(--paper);
+  background-image:radial-gradient(#00000008 1px,transparent 1px),radial-gradient(#ffffff40 1px,transparent 1px);
+  background-size:4px 4px,7px 7px}
+.wrap{max-width:1060px;margin:auto;padding:0 22px}
+.serif{font-family:Rockwell,"Roboto Slab","Courier New",Georgia,serif}
+header{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
+.logo{font-family:Rockwell,"Roboto Slab",Georgia,serif;font-size:28px;font-weight:800;letter-spacing:.5px}
+.logo b{color:var(--rust)}
+.stamp{font-size:12px;letter-spacing:2px;text-transform:uppercase;border:2px solid var(--ink);border-radius:6px;padding:5px 10px;transform:rotate(-2deg)}
+.hero{position:relative;margin:24px 0 10px;padding:70px 34px 60px;text-align:center;border-radius:22px;
+  background:linear-gradient(160deg,#f3d39a 0%,#eab06a 45%,#d97a3e 100%);box-shadow:0 18px 40px -22px #7a3a1a;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,#ffffff10 0 2px,transparent 2px 6px);pointer-events:none}
+.hero:after{content:"";position:absolute;left:-10%;right:-10%;bottom:-60px;height:140px;border-radius:50%;
+  background:repeating-linear-gradient(90deg,var(--rust) 0 40px,var(--mustard) 40px 80px,var(--teal) 80px 120px);opacity:.25}
+.hero h1{position:relative;font-family:Rockwell,"Roboto Slab",Georgia,serif;font-size:clamp(36px,6.4vw,66px);line-height:1.05;margin:0 0 16px;color:#2b1a10}
+.hero h1 span{color:#fff7ea;text-shadow:3px 3px 0 var(--rust)}
+.hero p{position:relative;font-size:19px;max-width:640px;margin:0 auto 28px;color:#3b2414}
+.btn{position:relative;display:inline-block;padding:14px 28px;border-radius:999px;background:var(--ink);color:var(--paper);
+  font-weight:700;text-decoration:none;box-shadow:4px 4px 0 var(--rust);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--rust)}
+h2{font-family:Rockwell,"Roboto Slab",Georgia,serif;font-size:32px;margin:70px 0 6px}
+h2:after{content:"";display:block;width:70px;height:4px;margin-top:8px;border-radius:2px;background:linear-gradient(90deg,var(--rust),var(--mustard))}
+.sub{margin:0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:28px 0}
+.card{background:#fffaf0;border:2px dashed #c9a77f;border-radius:16px;padding:22px;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:rotate(-1deg) translateY(-3px);box-shadow:0 10px 24px -14px #7a3a1a}
+.n{display:inline-block;font-family:Rockwell,Georgia,serif;font-weight:800;color:#fff;background:var(--teal);border-radius:8px;padding:2px 10px;font-size:14px}
+.card h3{font-family:Rockwell,Georgia,serif;margin:12px 0 6px;font-size:20px}
+.card p{margin:0;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}
+.tags span{background:#fffaf0;border:2px solid var(--ink);border-radius:8px;padding:6px 14px;font-size:15px;box-shadow:3px 3px 0 var(--mustard)}
+.tags span:nth-child(3n){box-shadow:3px 3px 0 var(--rust)}
+.tags span:nth-child(4n){box-shadow:3px 3px 0 var(--teal)}
+.pay{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.pay span{background:var(--ink);color:var(--paper);border-radius:10px;padding:10px 18px;font-weight:700}
+.pay span.soon{background:transparent;color:var(--ink);border:2px dashed var(--ink)}
+.note{margin-top:60px;padding:30px;border-radius:18px;background:var(--paper2);border:2px solid #d9c09a;text-align:center}
+.note h3{font-family:Rockwell,Georgia,serif;font-size:26px;margin:0 0 6px}
+footer{margin:60px 0 30px;padding-top:18px;border-top:2px dashed #c9a77f;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="logo"><span>Mint</span>Find</div>
-    <div class="badge">Calgary, AB · launching soon</div>
+    <div class="logo"><b>Mint</b>Find</div>
+    <div class="stamp">Alberta · Canada · Ships worldwide</div>
   </header>
 
   <section class="hero">
-    <h1>Hidden gems, <em>mint condition</em>.</h1>
-    <p>We hunt Calgary thrift shops, estate sales and local auctions for quality pieces — then check, clean, photograph and price them fairly.</p>
-    <a class="cta" href="#how">How it works</a>
+    <h1>Hidden gems,<br><span>mint condition.</span></h1>
+    <p>Hand-picked vintage and quality pre-loved pieces — checked, cleaned and fairly priced. From Alberta, Canada to anywhere in the world.</p>
+    <a class="btn" href="#how">How it works</a>
   </section>
 
   <h2 id="how">How it works</h2>
-  <p class="sub">A human finds it. Smart tools check it. You get it.</p>
+  <p class="sub">Every piece has a story. We make sure it's a good one.</p>
   <div class="grid">
-    <div class="card"><div class="n">01</div><h3>Found locally</h3><p>Every item is picked by hand in and around Calgary.</p></div>
-    <div class="card"><div class="n">02</div><h3>Checked & priced</h3><p>We verify brand and condition and price against real recent sales.</p></div>
-    <div class="card"><div class="n">03</div><h3>Honest listing</h3><p>Clear photos, measurements and any flaws — no surprises.</p></div>
-    <div class="card"><div class="n">04</div><h3>Pickup or shipping</h3><p>Local pickup in Calgary or tracked shipping across Canada.</p></div>
+    <div class="card"><span class="n">01</span><h3>Hand-picked</h3><p>Only pieces with quality, character and real value make the cut.</p></div>
+    <div class="card"><span class="n">02</span><h3>Checked & priced</h3><p>Brand and condition verified, priced fairly against the market.</p></div>
+    <div class="card"><span class="n">03</span><h3>Honest listing</h3><p>Clear photos, measurements and any flaws — no surprises.</p></div>
+    <div class="card"><span class="n">04</span><h3>Ships worldwide</h3><p>Carefully packed and tracked, wherever you are.</p></div>
   </div>
 
-  <h2>What we hunt</h2>
+  <h2>What we find</h2>
   <div class="tags">
     <span>Tools</span><span>Vintage audio</span><span>Turntables & vinyl</span><span>Speakers</span><span>Watches</span>
     <span>Binoculars & optics</span><span>Knives & Zippo</span><span>Cameras & electronics</span><span>Toys & board games</span>
@@ -64,14 +82,16 @@ footer{margin:70px 0 30px;padding-top:20px;border-top:1px solid #1d2b24;color:#7
   </div>
 
   <h2>Pay your way</h2>
-  <p class="sub">Card, PayPal, Interac e-Transfer — and crypto at checkout once enabled.</p>
-  <div class="pay"><span>Card</span><span>PayPal</span><span>Interac</span><span>Crypto (soon)</span></div>
+  <p class="sub">Card, PayPal, Interac e-Transfer — crypto at checkout coming soon.</p>
+  <div class="pay"><span>Card</span><span>PayPal</span><span>Interac</span><span class="soon">Crypto · soon</span></div>
 
-  <h2>First drops are coming</h2>
-  <p class="sub">The shop opens with our first finds. Follow along on Instagram — coming soon.</p>
+  <div class="note">
+    <h3>The first drop is on its way</h3>
+    <p class="sub">Our first finds are being checked and photographed. Instagram coming soon.</p>
+  </div>
 
   <footer>
-    <div>© 2026 MintFind · Calgary, Alberta</div>
+    <div>© 2026 MintFind · Alberta, Canada</div>
     <div>Shop terms and policies will be published with the first listings.</div>
   </footer>
 </div>
